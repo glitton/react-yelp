@@ -20,11 +20,15 @@ const businesses = [
 ];
 
 class App extends Component {
+  searchYelp() {
+    console.log(`I just search for ${this.business.category}`);
+  }
+
   render() {
     return (
       <div className="App">
         <h1>ravenous</h1>
-          <SearchBar />
+          <SearchBar searchYelp={this.searchYelp}/>
           <BusinessList businesses={businesses}/>
       </div>
     );
