@@ -11,7 +11,7 @@ class SearchBar extends React.Component {
       'sortBy': 'best_match',
     };
 
-    // this.getSortByClass = this.getSortByClass.bind(this);
+    // this.getSortByClass = this.getSortByClass.bind(this); why not do this??
     this.handleSortByChange = this.handleSortByChange.bind(this);
     this.handleTermChange = this.handleTermChange.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
@@ -52,9 +52,9 @@ class SearchBar extends React.Component {
   renderSortByOptions() {
     return Object.keys(this.sortByOptions).map(sortByOption => {
       let sortByOptionValue = this.sortByOptions[sortByOption];
-      return (<li 
-                key={sortByOptionValue}
-                onClick={this.handleSortByChange.bind(this, sortByOptionValue)}>
+      return (<li className={this.getSortByClass(sortByOptionValue)}
+                  key={sortByOptionValue}
+                  onClick={this.handleSortByChange}>
                 {sortByOption}
               </li>);
     });

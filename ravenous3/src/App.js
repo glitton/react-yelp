@@ -20,8 +20,8 @@ const businesses = [
 ];
 
 class App extends Component {
-  searchYelp() {
-    console.log(`I just search for ${this.business.category}`);
+  searchYelp(term, location, sortBy) {
+    console.log(`i just search for ${term}. ${location}, ${sortBy}`);
   }
 
   render() {
