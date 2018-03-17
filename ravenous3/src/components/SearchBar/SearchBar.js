@@ -11,7 +11,7 @@ class SearchBar extends React.Component {
       'sortBy': 'best_match',
     };
 
-    // this.getSortByClass = this.getSortByClass.bind(this); why not do this??
+    this.getSortByClass = this.getSortByClass.bind(this);
     this.handleSortByChange = this.handleSortByChange.bind(this);
     this.handleTermChange = this.handleTermChange.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
@@ -61,6 +61,7 @@ class SearchBar extends React.Component {
   }
 
   render() {
+    console.log()
     return (
       <div className="SearchBar">
         <div className="SearchBar-sort-options">
