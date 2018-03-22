@@ -11,8 +11,6 @@ class SearchBar extends React.Component {
       'sortBy': 'best_match',
     };
 
-    this.baseState = this.state;
-
     // this.getSortByClass = this.getSortByClass.bind(this);
     this.handleSortByChange = this.handleSortByChange.bind(this);
     this.handleTermChange = this.handleTermChange.bind(this);
@@ -53,7 +51,9 @@ class SearchBar extends React.Component {
     }
 
     resetForm = () => {
-      this.setState({term: '', location: ''})
+      this.setState({ term: '', location: ''})
+      // const stateString = JSON.stringify(this.baseState)
+      console.log('clear (state): ' + JSON.stringify(this.state))
     }
 
 
@@ -85,7 +85,7 @@ class SearchBar extends React.Component {
         </div>
         <div className="SearchBar-submit">
           <a onClick={this.handleSearch}>Show Me</a>
-          <a onClick={this.resetForm}>Cancel</a>
+          <a onClick={this.resetForm}>Clear</a>
         </div>
       </div>
     )
